@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.register {
+    background-image: url("../images/tech.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+#form, .boothFields, #btnPage, #searchBtnData, #voterBtnData, #syncBtnData {
+ display: none;
+}
+#registrationForm {
+    text-align: center;
+    background-image: url(../images/register-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    padding: 1px;
+}
+#boothFrom, #boothTo {
+    margin: 0 auto;
+}
+input {
+    font-size: 20px;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+}
+.button, .mainButton {
+    color: #fff;
+    background-color: #0d6efd;
+    text-align: center;
+    width: 200px;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.mainButton {
+    margin: 10px;
+}
+.button:hover, .mainButton:hover {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+#btnPage {
+    text-align: center;
+    background-image: url(../images/register-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+}
+.btnRow {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+th, td {
+    padding: 10px;
+}
