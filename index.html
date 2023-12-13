@@ -17,33 +17,35 @@
 
 <!-- Registration Form second section-->
 <div class="container" id="form">
-    <div class="row">
+    <div class="row" id="rowForm">
         <form action="" id="registrationForm">
             <h1 class="appRegistration">App Registration</h1>
             <label for="firstName"></label><br>
-            <input type="text" id="firstName" name="firstName" placeholder="First Name" required><br>
+            <input type="text" id="firstName" class = "registrationFormFields" name="firstName" placeholder="First Name" required><br>
             <label for="lastName"></label><br>
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required><br>
+            <input type="text" id="lastName" class = "registrationFormFields" name="lastName" placeholder="Last Name" required><br>
             <label for="mobileNumber"></label><br>
-            <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number" required><br>
+            <input type="text" id="mobileNumber" class = "registrationFormFields" name="mobileNumber" placeholder="Mobile Number" required><br>
             <label for="activationCode"></label><br>
-            <input type="password" id="activationCode" name="activationCode" placeholder="Activation Code" required><br>\
-
+            <input type="password" id="activationCode" class = "registrationFormFields" name="activationCode" placeholder="Activation Code" required><br>
             <label for="boothFrom"></label><br>
-            <input type="text" id="boothFrom" name="boothFrom" class="boothFields" placeholder="Booth No. From" required><br>
-            <label for="boothTo"></label>
-            <input type="text" id="boothTo" name="boothTo" class="boothFields" placeholder="Booth No. To" required><br>
-
+            <input type="text" id="boothFrom" name="boothFrom" class="boothFields registrationFormFields" placeholder="Booth No. From" required><br>
+            <label for="boothTo"></label><br>
+            <input type="text" id="boothTo" name="boothTo" class="boothFields registrationFormFields" placeholder="Booth No. To" required><br><br>
             <button type="submit" id="button" class="button">Submit</button>
         </form>
     </div>
 </div>
 
 <!-- main buttons third section-->
-<div class="container" id="btnPage">
-    <a href="searchPage/index.html" class="mainButton">Search</a>
-    <a href="voterListPage/index.html" class="mainButton">Voter List</a>
-    <a href="syncPage/index.html" class="mainButton">Sync</a>
+<div class="container">
+    <div class="row" id="btnPage">
+        <div class="col" id="new">
+            <a href="searchPage/index.html" class="mainButton">Search</a>
+            <a href="voterListPage/index.html" class="mainButton">Voter List</a>
+            <a href="syncPage/index.html" class="mainButton">Sync</a>
+        </div>
+    </div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js" type="module"></script>
