@@ -14,11 +14,12 @@ body {
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
-    font-size: 120px;
 }
+
 #form, .boothFields, #btnPage, #searchBtnData {
  display: none;
 }
+
 #rowForm {
     text-align: center;
     background-image: url(../images/register-bg.jpg);
@@ -29,6 +30,7 @@ body {
     height: 100vh;
     padding: 1px;
 }
+
 #registrationForm {
     display: flex;
     flex-direction: column;
@@ -37,30 +39,39 @@ body {
     height: 100vh !important;
     justify-content: center;
 }
+
+.appRegistration {
+    font-size: 40px;
+}
+
 #boothFrom, #boothTo {
     margin: 0 auto;
 }
+
 .registrationFormFields {
-    font-size: 60px;
-    padding: 30px;
+    font-size: 20px;
+    padding: 10px;
     border: none;
-    border-radius: 60px;
+    border-radius: 20px;
 }
+
 .button, .mainButton {
     color: #fff;
     background-color: #0d6efd;
     text-align: center;
-    width: 400px;
+    width: 150px;
     border: none;
-    padding: 15px;
-    font-size: 55px;
-    border-radius: 50px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
 .mainButton {
     width: 250px;
     text-decoration: none;
 }
+
 #new {
     display: flex;
     margin: 0 auto;
@@ -68,11 +79,13 @@ body {
     justify-content: space-evenly;
     height: 100vh !important;
 }
+
 .button:hover, .mainButton:hover {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca;
 }
+
 #btnPage {
     text-align: center;
     background-image: url(../images/register-bg.jpg);
@@ -82,18 +95,19 @@ body {
     color: white;
     height: 100vh;
 }
+
 .btnRow {
     display: flex;
     margin: 0 auto;
     justify-content: center;
 }
+
 th, td {
     padding: 10px;
-    font-size: 35px;
+    font-size: 20px;
+    border: 1px solid;
 }
-.appRegistration {
- font-size: 120px;
-}
+
 /*search page */
 #searchForm {
     display: flex;
@@ -101,19 +115,115 @@ th, td {
     align-items: center;
     padding: 30px;
 }
+.searchFormDiv {
+    display: flex;
+    padding: 10px
+}
+
+.searchFormInput {
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 2px solid #8F0000;
+}
+#searchFormSubmit {
+    margin: 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 2px solid #8F0000;
+    background: #8F0000;
+    color: white;
+    font-weight: 700;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 /*Voter page css*/
 #searchPageHeading, #voterPageHeading, #syncPageHeading {
     margin: 0;
     padding: 20px;
-    font-size: 60px;
+    font-size: 30px;
     color: wheat;
     background: #8f0000;
-
 }
+
 .voterPageBtn {
-    width: 400px;
-    padding: 45px;
-    font-size: 35px;
-    margin: 70px 30px;
+    width: 210px;
+    padding: 15px;
+    font-size: 20px;
+    margin: 15px;
 }
 /*sync page*/
+
+/*media query for mobile*/
+@media only screen and (max-width: 480px) {
+    .register {
+        font-size: 60px !important;
+        text-align: center !important;
+    }
+    .appRegistration {
+        font-size: 50px !important;
+    }
+    .registrationFormFields {
+        font-size: 20px !important;
+        padding: 15px !important;
+        border: none !important;
+        border-radius: 30px !important;
+    }
+    .button, .mainButton {
+        text-align: center !important;
+        width: 150px !important;
+        padding: 10px !important;
+        font-size: 20px !important;
+        border-radius: 30px !important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .register {
+        font-size: 80px;
+        text-align: center;
+    }
+    .appRegistration {
+        font-size: 80px;
+    }
+    .registrationFormFields {
+         font-size: 40px;
+         padding: 25px;
+         border: none;
+         border-radius: 40px;
+     }
+    .button {
+        text-align: center;
+        width: 400px;
+        padding: 15px;
+        font-size: 55px;
+        border-radius: 50px;
+    }
+    .mainButton {
+        text-align: center;
+        width: 170px;
+        padding: 15px;
+        font-size: 40px;
+        border-radius: 40px;
+    }
+    #searchPageHeading, #voterPageHeading, #syncPageHeading {
+        font-size: 40px;
+    }
+    th, td {
+        padding: 10px;
+        font-size: 10px;
+        text-align: center;
+        border: 1px solid;
+    }
+    .voterPageBtn {
+        width: 250px;
+        padding: 18px;
+        font-size: 24px;
+        margin: 30px;
+    }
+}

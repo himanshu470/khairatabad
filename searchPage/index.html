@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Search Page</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -12,22 +13,24 @@
     <div class="row">
         <div class="col">
             <form id="searchForm">
-                <label for="fullName"></label><br>
-                <input type="text" id="fullName" placeholder="Full Name"><br>
-                <label for="epicNumber"></label><br>
-                <input type="text" id="epicNumber" placeholder="Epic Number"><br>
-                <label for="houseNumber"></label><br>
-                <input type="text" id="houseNumber" placeholder="House Number"><br>
-                <label for="mobileNumber"></label><br>
-                <input type="text" id="mobileNumber" placeholder="Mobile Number"><br>
-                <label for="boothNumber"></label><br>
-                <input type="text" id="boothNumber" placeholder="Booth Number"><br><br>
-                <input type="submit" value="Clear Search Result">
+                <div class="searchFormDiv">
+                    <input type="text" id="fullName" class="searchFormInput" placeholder="Full Name"><br>
+                    <input type="text" id="epicNumber" class="searchFormInput" placeholder="Epic Number"><br>
+                </div>
+                <div class="searchFormDiv">
+                    <input type="text" id="houseNumber" class="searchFormInput" placeholder="House Number"><br>
+                    <input type="text" id="mobileNumber" class="searchFormInput" placeholder="Mobile Number"><br>
+                </div>
+                <div class="searchFormDiv">
+                    <input type="text" id="boothNumber" class="searchFormInput" placeholder="Booth Number"><br><br>
+                    <input type="submit" id="searchFormSubmit" value="Clear Search Result">
+                </div>
             </form>
         </div>
     </div>
 </div>
-<div class="container">
+
+<div class="container tableContainer">
     <table>
         <thead>
         <th>S.No</th>
