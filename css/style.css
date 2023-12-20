@@ -167,7 +167,7 @@ th, td {
         text-align: center !important;
     }
     .appRegistration {
-        font-size: 50px !important;
+        font-size: 45px !important;
     }
     .registrationFormFields {
         font-size: 20px !important;
@@ -185,24 +185,24 @@ th, td {
 }
 @media only screen and (max-width: 768px) {
     .register {
-        font-size: 80px;
+        font-size: 50px;
         text-align: center;
     }
     .appRegistration {
-        font-size: 80px;
+        font-size: 60px;
     }
     .registrationFormFields {
-         font-size: 40px;
-         padding: 25px;
-         border: none;
-         border-radius: 40px;
+        font-size: 30px;
+        padding: 18px;
+        border: none;
+        border-radius: 35px;
      }
     .button {
         text-align: center;
-        width: 400px;
-        padding: 15px;
-        font-size: 55px;
-        border-radius: 50px;
+        width: 250px;
+        padding: 12px;
+        font-size: 35px;
+        border-radius: 30px;
     }
     .mainButton {
         text-align: center;
