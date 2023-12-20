@@ -148,24 +148,6 @@ function addAllITemToTable(theStudents) {
     })
 }
 
-// async function getAllData() {
-//     console.log("Fetching data from Firestore");
-//     const querySnapshot = await getDocs(collection(firestore, "registrationData"));
-//     if (querySnapshot.empty) {
-//         console.log("No documents found in the 'registrationData' collection");
-//         return;
-//     }
-//
-//     const students = [];
-//     querySnapshot.forEach(doc => {
-//         students.push(doc.data());
-//     });
-//     console.log("Data fetched successfully:", students);
-//
-//     addAllITemToTable(students);
-// }
-
-
 async function getAllData() {
     console.log("Fetching data from Firestore");
     try {
@@ -174,7 +156,6 @@ async function getAllData() {
             console.log("No documents found in the 'registrationData' collection");
             return;
         }
-
         const students = [];
         querySnapshot.forEach(doc => {
             students.push(doc.data());
@@ -188,4 +169,89 @@ async function getAllData() {
 
 document.addEventListener("DOMContentLoaded", function () {
     getAllData();
+    //Search page form code for searching the users inside the page
+    const fullNameInput = document.getElementById("fullName");
+    const epicNumberInput = document.getElementById("epicNumber");
+    const houseNumberInput = document.getElementById("houseNumber");
+    const mobileNumberInput = document.getElementById("mobileNumber");
+    const boothNumberInput = document.getElementById("boothNumber");
+    const searchForm = document.getElementById("searchForm");
+    const clearSearchResult = document.getElementById("searchFormSubmit");
+    const inputs = [fullNameInput, epicNumberInput, houseNumberInput, mobileNumberInput, boothNumberInput];
+
+    inputs.forEach(input => {
+        if (input) {
+            input.addEventListener("input", function () {
+                clearSearchResult.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    clearFormInputs();
+                });
+
+                const fullName = fullNameInput.value;
+                const epicNumber = epicNumberInput.value;
+                const houseNumber = houseNumberInput.value;
+                const mobileNumber = mobileNumberInput.value;
+                const boothNumber = boothNumberInput.value;
+
+                // Access the 'registrationData' collection
+                const registrationCollection = collection(firestore, "registrationData");
+
+                // Query Firestore based on the entered details
+                const query = getDocs(registrationCollection);
+
+                query.then((snapshot) => {
+                    const matchingData = [];
+
+                    snapshot.forEach((doc) => {
+                        const data = doc.data();
+                        if (
+                            (fullName && (data.firstName.includes(fullName) || data.lastName.includes(fullName))) ||
+                            (epicNumber && data.epicNumber === epicNumber) ||
+                            (houseNumber && data.houseNumber === houseNumber) ||
+                            (mobileNumber && data.mobileNumber === mobileNumber) ||
+                            (boothNumber && (data.boothFrom <= boothNumber && data.boothTo >= boothNumber))
+                        ) {
+                            matchingData.push(data);
+                        }
+                    });
+
+                    // Update the table with the matching data
+                    updateTable(matchingData);
+                }).catch((error) => {
+                    console.error("Error querying Firestore:", error);
+                });
+            });
+        }
+    });
+
+    function clearFormInputs() {
+        inputs.forEach(input => {
+            input.value = '';
+        });
+
+        // After clearing the form, fetch all data again
+        getAllData();
+    }
+
+    // Fetch all data when the page loads
+    // getAllData();
 });
+
+// Function to update the table with matching data
+function updateTable(data) {
+    const tableBody = document.getElementById("tableBody");
+    tableBody.innerHTML = "";
+
+    data.forEach((item, index) => {
+        const row = tableBody.insertRow(index);
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${item.firstName}</td>
+            <td>${item.lastName}</td>
+            <td>${item.mobileNumber}</td>
+            <td>${item.activationCode}</td>
+            <td>${item.boothFrom}</td>
+            <td>${item.boothTo}</td>
+        `;
+    });
+}
